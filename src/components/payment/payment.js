@@ -13,22 +13,22 @@ export const Payment = () => {
     <form id="miFormulario"  >
     <div className="input-container">
             <label>Name on Card </label>
-            <input  type="text" placeholder="Enter your Name" /> <br/><br/>
+            <input  type="text" placeholder="Enter your Name" /> 
         </div>
         
         <div className="input-container">
             <label>Card Number</label>
-            <input  type="text" placeholder="Enter Card Number"  /> <br/><br/>     
+            <input  type="text" placeholder="Enter Card Number"  />   
         </div>
                 
         <div className="input-container">
             <label> Security  code </label>
-            <input  type="text" placeholder="Security  code" /><br/><br/>
+            <input  type="text" placeholder="Security  code" />
        </div>
 
        <div className="input-container">
             <label>Billing Address</label>
-            <input  type="text" placeholder="Billing Address"  /> <br/><br/>
+            <input  type="text" placeholder="Billing Address"  /> 
        </div> 
            
        <div className="button-container">
