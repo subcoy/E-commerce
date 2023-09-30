@@ -29,41 +29,39 @@ const[passwd,setPasswd] =useState("");
 const [errorMessages, setErrorMessages] = useState({});
 const [isSubmitted, setIsSubmitted] = useState(false);
 const [emptyRegister, setEmptyRegister] =useState(false)
+console.log("iisSubmitted entrada=",isSubmitted)
 
 /*----------------------------------------------------------------- */
 
 /* save the input infoamtion in object */
 const saveInfo =(e)=>{
-    if(isSubmitted===true){
-        e.preventDefault();
-        if(setEmail===false||
-            setName===false|| 
-            setLastName===false|| 
-            setUserName===false ||
-            setPasswd===false){
+    e.preventDefault();
+    {console.log("iisSubmitted save info=",isSubmitted)}
+    {name?console.log("name=",name): name}
+        if(email==false|| name==false|| lastName==false|| userName==false || passwd==false){
+            
+            clearcell();
+                {setEmptyRegister(true)};
+            
 
+                {console.log("pase por If")}
+  
+            }
+            else{ 
+                const myUser = {name,lastName,email,userName,passwd};
+             
+            setUsers([...users,myUser]);
             clearcell();
             {setIsSubmitted(true)}
+                {console.log("pase por else")}
 
-
-            }else{
-                var myUser = {name,lastName,email,userName,passwd};
-             
-                setUsers([...users,myUser]);
-               
-                
-                clearcell();
                 }
-
-    } else{
-        clearcell();
+        
     }
-
-        }
+   
 // console.log("Registers",setRegister())
 /*--------------- clear the iformation in the form-------  */
-const clearcell =() =>
-{
+const clearcell =() =>{
     setName("");
     setLastName("");
     setEmail("");
@@ -73,13 +71,16 @@ const clearcell =() =>
 }
 /*-------------------------------------------------------- */
 const StatusRegister= ()=>{
-    if(setEmail===false|| setName===false|| setLastName===false|| setUserName===false || setPasswd==false){
-            {setIsSubmitted(true)}
+    if(email==false|| name==false|| lastName==false|| userName==false || passwd==false){
+             isSubmitted==false;
+            emptyRegister==true;
+
+            console.log("iisSubmitted  StatusRegister if=",isSubmitted);
 
         }else{
-            {setIsSubmitted(false)}
-            {setEmptyRegister(true)}
-           
+            isSubmitted==true;
+            console.log("iisSubmitted StatusRegister else=",isSubmitted);
+            
         }
 }
 
@@ -90,7 +91,11 @@ useEffect(() => {
   }, [users]);
 
 
-
+  const form = document.querySelector('form')
+  form.onsubmit = (e) => {
+    e.preventDefault()
+    console.log('submitted')
+  }
 /*---------------------------------------------------------*/
 
   // Generate JSX code for error message
@@ -103,32 +108,38 @@ useEffect(() => {
             <form id="miFormulario"  onSubmit={saveInfo}>
             <div className="input-container">
                     <label>Name </label>
-                    <input  type="text" placeholder="Enter your Name" onChange={(e)=>setName(e.target.value)}/> <br/><br/>
+                    <input  type="text" placeholder="Enter your Name" value={name} onChange={(e)=>setName(e.target.value)}/> 
+               
                 </div>
                 
                 <div className="input-container">
                     <label>Last Name </label>
-                    <input  type="text" placeholder="Enter your Last Name" onChange={(e)=>setLastName(e.target.value)} /> <br/><br/>     
+                    <input  type="text" placeholder="Enter your Last Name" value={lastName} onChange={(e)=>setLastName(e.target.value)} />     
                 </div>
                 
                 <div className="input-container">
                     <label>Email </label>
-                    <input  type="email" placeholder="Enter your email" onChange={(e)=>setEmail(e.target.value)} /> <br/><br/> 
+                    <input  type="email" placeholder="Enter your email" value={email} onChange={e=>setEmail(e.target.value)} /> 
                 </div>
                 
                 <div className="input-container">
                     <label>Username </label>
-                    <input  type="text" placeholder="Username" onChange={(e)=>setUserName(e.target.value)} /><br/><br/>
+                    <input  type="text" placeholder="Username" value={userName} onChange={(e)=>setUserName(e.target.value)} />
                </div>
 
                <div className="input-container">
                     <label>Password</label>
-                    <input  type="text" placeholder="Enter your Password" onChange={(e)=>setPasswd(e.target.value)} /> <br/><br/>
+                    <input  type="text" placeholder="Enter your Password" value={passwd} onChange={(e)=>setPasswd(e.target.value)} /> 
                </div> 
-                    {(setEmail===false||setName===false|| setLastName===false|| setUserName===false ||setPasswd===false)? isSubmitted==false: isSubmitted==true}
+                    {/* {(email==false || name==false || lastName==false || userName==false || passwd==false)? isSubmitted==false: isSubmitted==true} */}
+                    {console.log("iisSubmitted after=",isSubmitted)}
                <div className="button-container">
-                <button className="input-container" onClick={()=> StatusRegister()}>Register</button>
+                <button type="submit" className="input-container" onClick={StatusRegister()}>Register</button>
+                {console.log("iisSubmitted button=",isSubmitted)}
                
+                </div>
+                <div>
+                {emptyRegister? <h2 > Please Complete the Form </h2>:"" }
                 </div>
             
             </form>
@@ -147,12 +158,7 @@ useEffect(() => {
                 </Link> 
                 <h1 className="title" >New Account</h1>
                 {console.log("valor isSubmitted=",isSubmitted)}
-                {isSubmitted===false && emptyRegister===true?  <h2 > Congratulations you have Account </h2> : renderForm}
-               
-            </div>
-
-            <div>
-            {emptyRegister===true && isSubmitted===true ? <h3 > Please Complete the Form</h3> : ""}
+                {isSubmitted ? <h2 > Congratulations you have Account </h2> : renderForm}
             </div>
         </div>
  
