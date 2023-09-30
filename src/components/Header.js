@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import '../style/index.css';
-import logo  from '../images/logo.jpg';
+import logo  from '../images/logo1.jpg';
 import 'boxicons';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../context/Dataprovider';
@@ -64,29 +64,28 @@ export const Header = () => {
             </div>
 
         </div> 
+        <div className='view-user-name'>
+            {userLoged? <span>{userLoged}</span>:
+                <div className='login'>
+                            <Link to="Login">
+                                <p>Sign In</p>
+                            </Link>
+                </div>
+            } 
 
-        {userLoged? <span>{userLoged}</span>:
+                {userLoged?
+                <div className='login'>
+                            <a href="#">
+                                <div>
+                                <buttom  onClick={()=>LogOut()} >Log Out </buttom>                            
+                                </div>
+                            </a> 
+                </div>
+                :''}
 
-            <div className='login'>
-                        <Link to="Login">
-                            <p>Sign In</p>
-                        </Link>
-            </div>
-        }
+        </div>
 
-            {userLoged?
 
-            <div className='login'>
-                        <a href="#">
-                            <div>
-                            <buttom  onClick={()=>LogOut()} >Log Out </buttom>
-                            
-                            </div>
-                            
-
-                        </a> 
-            </div>
-            :''}
 
 
     </header>

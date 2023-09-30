@@ -41,22 +41,20 @@ const ProductCard = ({product}) => {
             <div className='products'>                                 
                 <a href="#">
                     <div className='product'>  
-                           
+                            <h1>{product.title}</h1>  
+                            <p>Category={product.category} </p>   
+                            <p>Rating= {product.rating.rate}
+                            <box-icon name="star" fill="blue"></box-icon> </p>                                                
                             <img  src={`${product.image}` } alt={`${product.description}` } onClick={()=> ViewProduct(product)}/> 
-                            
+                                <div className='product_footer'>
+                                {/* <p>Count= {product.rating.count}</p> */}
+                                <p className='price'> Price=${product.price}</p>
+                                </div>
+      
                     </div>
+
                 </a>                   
-                <div className='product_footer'>                     
-                        <h1>{product.title}</h1>
-                        <p>Category={product.category} $</p>
-                        <p>Rating= {product.rating.rate}</p>
-                        {
-                            
-                        }
-                        <box-icon name="star" fill="blue"></box-icon>
-                        <p>Count= {product.rating.count}</p>
-                        <p className='price'>Price=${product.price}</p>
-                </div>
+  
                 <div className='buttom'>
                         <buttom className="ADD" onClick={()=>addToCart(product)} >ADD to Cart </buttom>
                    

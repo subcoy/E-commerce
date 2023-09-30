@@ -65,15 +65,14 @@ export const ViewAllProducts = () => {
     console.log("setproducts",setFillProduct);
     
     return(
-            <>
+            <div className='cab'>
             <div className= "sort-btn"> 
                 Filter:
                 <button className='btn1'  onClick={() => {sortByName()}}>Sort by name </button>
                 <button className='btn2'  onClick={() => {sortByPrice()}}>Sort by price </button>
-            </div>
-            <div className='btn-category'>    
+  
                 Category:
-                <select onChange ={(e) => {filterbyCategory(e.target.value)}}>
+                <select  className='btn-category' onChange ={(e) => {filterbyCategory(e.target.value)}}>
                     {categories.length && categories.map((el, i) =>{
                         return (<option key={i} value={el}> {el} </option>)
                     })}
@@ -81,7 +80,7 @@ export const ViewAllProducts = () => {
             </div>
 
             <div className='panelProducts'>            
-     { /**------------Conditional when Array is empty--------------------- */}
+                 { /**------------Conditional when Array is empty--------------------- */}
                 { filPrduct.length===0 ? 
                 
                     (!!products.length && products.map((el,id) =>{
@@ -91,11 +90,11 @@ export const ViewAllProducts = () => {
                         return(<ProductCard key={id} product={el} /> ) }))
 
                 }
-     {/*---------------------------------------------------------------------- */}       
+                 {/*---------------------------------------------------------------------- */}       
              
             </div>
 
 
-            </>
+            </div>
             )
 }  

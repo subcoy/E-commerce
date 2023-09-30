@@ -161,7 +161,7 @@ export const Cart = (product) => {
                          <>
                          <a href="#">
                          <div className='btn-checkOut' >                        
-                            <p onClick={()=> CheckOut()} >Proceed to Checout</p>                        
+                            <p onClick={()=> CheckOut()} >Proceed to CheckOut</p>                        
                         </div>
                         </a> 
                         </>: ""}

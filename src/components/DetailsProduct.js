@@ -61,6 +61,7 @@ export const DetailsProduct = (prod) => {
                                     <div className='view'>
                                         <h3 >{item.title}</h3>
                                         <p >{item.description}</p>
+                                        <p>Count= {item.rating.count}</p>
                                         <p>Rating</p>
                                         { RatingStar(item.rating.rate)}
                                         
