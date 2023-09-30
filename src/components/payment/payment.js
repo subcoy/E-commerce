@@ -5,7 +5,7 @@ import { DataContext } from '../../context/Dataprovider';
 export const Payment = () => {
 
     const [payinfo, setPayInfo] = useState(false);
-    const [items,setItems] = useContext(DataContext);
+    const {items,setItems} = useContext(DataContext);
   
 
     const renderForm = (
