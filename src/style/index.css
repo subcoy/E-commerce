@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  
+ 
 }
 /*------------------- image -----------------------*/
 
@@ -361,6 +361,9 @@ header .login{
   box-shadow: 0 5px 10px 2px rgb(66, 119, 218);
   border: 6px solid transparent;
   border-radius:  1rem;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  background-color: rgb(221, 243, 252);
 }
 
 .product:hover{
@@ -402,7 +405,7 @@ header .login{
   grid-template-columns: 2fr 1fr;
   gap: 1rem 3rem;
   padding: 0 1rem;
-  margin: 1rem;
+  /* margin: 1rem; */
  
 }
 
@@ -466,26 +469,27 @@ header .login{
   
 }
 .sort-btn .btn1{
-  margin-top: 15rem;
+  margin-top: 10rem;
   margin-left: 5px;
   padding-left: 10px;
   padding-right: 10px;
 
 }
 .sort-btn .btn2{
-  margin-top: 15rem;
-  margin-left: 5px;
+  margin-top: 1rem;
+  margin-left: 10px;
   padding-left: 10px;
   padding-right: 10px;
   
 }
 
  .btn-category{
+  margin-top: 15px;
   margin-left: 20px;
   font-size: 20px;
 }
 
-select{
+.btn-category select{
   font-size: 19px;
   padding-left: 10px;
   margin-left: 5px;
@@ -502,7 +506,7 @@ select{
 /*--------------------- Bestproducts   --------------------------*/
 
 .Bproducts{ 
-  padding: 5rem 2rem;
+  padding: 2rem 2rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(22rem, 10%));
@@ -517,6 +521,7 @@ select{
   box-shadow: 0 5px 10px 2px rgb(66, 119, 218);
   border: 6px solid transparent;
   border-radius:  1rem;
+  background-color: rgb(221, 243, 252);
 }
 
 .Bproduct:hover{
@@ -566,6 +571,10 @@ select{
 .tiempo-msj {
   transition-delay: 5s;
   color: red;
+}
+
+.view-user-name span{
+  padding-left: 20px;
 }
 
 
@@ -632,7 +641,7 @@ select{
 @media only screen and (max-width: 620px){
   .cart{
     width: 90%;
-    height: 90%;
+    height: 70%;
   
   }
 }  
@@ -706,13 +715,111 @@ select{
     /* min-width: 300px; */
   }  
 
-  .title {
-    font-size: 25px;
-    margin-bottom: 80px;
+  .log.login-form.title{
+    margin-bottom: 180px;
+
   }
 }
 
+@media only screen and (max-width: 415px){
+  header {
+   margin-right: 20px;
+    max-width: 350px;
+    /* min-width: 300px; */
+  }  
+  .logo {
+    width: 1rem;
+    height: auto;
+  }
 
+  .log.login-form.title{
+    margin-bottom: 180px;
+
+  }
+
+ 
+  .cart_item img{
+    width: 4rem;
+    height: auto;
+    
+
+  }
+  .cart_item p{
+    width: 230px;
+    text-align: justify;
+
+  }
+  .Bproducts{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  
+  }
+  .product .Bproduct{
+    width: 100%;
+    height: 90%;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+ 
+
+  }
+  .Bproduct{
+    width: 95%;
+    height: 95%;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .product p .Bproduct p{
+  padding: 5px 0 0 5px;
+
+  }
+
+  .Bproduct p{
+    padding: 5px 0 0 5px;
+  
+    }
+ .Bproduct p{
+    padding: 5px 0 0 5px;
+  
+    }
+
+  .product .price {
+    margin: 10px;
+    font-size: 20px;
+  
+    }
+    .Bproduct .price {
+      margin: 10px;
+      font-size: 20px;
+    
+      }
+  .product img {
+    width: 6rem;
+    height: auto;
+    padding-top: 20px;
+    border-radius: 1rem;
+    margin: 0 0 0 0;
+       
+  }
+  .Bproduct img{
+    width: 6rem;
+    height: auto;
+    padding-top: 20px;
+    border-radius: 1rem;
+    margin: 0 0 0 0;
+       
+  }
+
+  .buttom .ADD{
+    margin-left: 25%;
+  }
+
+
+}
+
+
+/*----------------------------------------------------*/
 
 @media only screen and (max-width: 600px){
   header ul{
