@@ -29,10 +29,13 @@ export const Start = () => {
                     <h1 >Best Sellers</h1> 
                 </div>
 
-                <div >
-                    {!!products.length && products.map((el,id) =>{
-                        return<BestProducts key={id} product={el} /> 
+                <div className='container-products'>
+                    
+                    {products.filter((product)=> product.rating.rate>=4).map((el,id)=>{
+                     return<BestProducts key={id} product={el} /> 
                     })}
+
+
                 </div>
 
         </>
