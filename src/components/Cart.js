@@ -120,12 +120,24 @@ export const Cart = (product) => {
                     <h2> Your cart</h2>
 
                     <div className='cart_center'>
+                                                   
+                    <h3 className='product_footer'> {totalPrice()===0 ? '':'Total Items='} {totalPrice()!==0 ? totalItems() : ""} </h3>    
+                         <h3 className='product_footer'> {totalPrice()===0 ? <h2  className='empyCartTitle'>Your Cart is Empty</h2>:'Total Price= $'} {totalPrice()!==0 ? totalPrice().toFixed([2]) : ""} </h3> 
+                         
+                         {totalPrice()!==0?
+                         <>
+                         <a href="#">
+                         <div className='btn-checkOut' >                        
+                            <p onClick={()=> CheckOut()} >Proceed to CheckOut</p>                        
+                        </div>
+                        </a> 
+                        </>: ""}
                     
                         {items.map(item => (
                         
                             <div className='cart_item'>
                                 <img src={item.image} alt=""/> 
-                                    <div className='Precio'>
+                                    <div >
                                         <h3>{item.title}</h3> <br/>
                                         
                                         <div>
@@ -136,9 +148,14 @@ export const Cart = (product) => {
                                     
                                    
                                     <div className='arrow'>  
+                                    <div className='uparrow'>
+                                    <box-icon name="up-arrow" type="solid" onClick={()=> sume(item.id)}></box-icon> 
+                                    </div>
                                         
-                                        <box-icon name="up-arrow" type="solid" onClick={()=> sume(item.id)}></box-icon> 
-                                        <box-icon name="down-arrow" type="solid" onClick={()=> reste(item.id)} ></box-icon>
+                                    <div className='downArrow'>
+                                    <box-icon  name="down-arrow" type="solid" onClick={()=> reste(item.id)} ></box-icon>
+                                    </div>   
+                                        
                                         
                                     </div>
                                     <div className='remove_item'>
@@ -153,18 +170,9 @@ export const Cart = (product) => {
                                 
 
                             </div>
-                        )) }                            
-                         <h3 className='product_footer'> {totalPrice()===0 ? '':'Total Items='} {totalPrice()!==0 ? totalItems() : ""} </h3>    
-                         <h3 className='product_footer'> {totalPrice()===0 ? <h2  className='empyCartTitle'>Your Cart is Empty</h2>:'Total Price= $'} {totalPrice()!==0 ? totalPrice().toFixed([2]) : ""} </h3> 
-                         
-                         {totalPrice()!==0?
-                         <>
-                         <a href="#">
-                         <div className='btn-checkOut' >                        
-                            <p onClick={()=> CheckOut()} >Proceed to CheckOut</p>                        
-                        </div>
-                        </a> 
-                        </>: ""}
+                        )) } 
+
+
                         
                      
                         
