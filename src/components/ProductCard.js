@@ -34,31 +34,31 @@ const ProductCard = ({product}) => {
     console.log("description=",cart);
     navigate('/DetailsProduct');
 }
-
+const smallTitle = product.title.length<15 ? product.title: product.title.slice(0,15)+ "...";
+console.log(smallTitle);
 /*--------------------------------------------*/
     return (
         <>
             <div className='products'>                                 
                 <a href="#">
                     <div className='product'>  
-                            <h1>{product.title}</h1>  
+                            <h1>{smallTitle}</h1>  
                             <p>Category={product.category} </p>   
                             <p>Rating= {product.rating.rate}
                             <box-icon name="star" fill="blue"></box-icon> </p>                                                
                             <img  src={`${product.image}` } alt={`${product.description}` } onClick={()=> ViewProduct(product)}/> 
                                 <div className='product_footer'>
-                                {/* <p>Count= {product.rating.count}</p> */}
+                               
                                 <p className='price'> Price=${product.price}</p>
                                 </div>
       
                     </div>
 
-                </a>                   
-  
+                </a>  
                 <div className='buttom'>
-                        <buttom className="ADD" onClick={()=>addToCart(product)} >ADD to Cart </buttom>
-                   
-                </div>
+                        <buttom className="ADD" onClick={()=>addToCart(product)} >ADD to Cart </buttom>                   
+                </div>                 
+  
            </div>
      </>
 
