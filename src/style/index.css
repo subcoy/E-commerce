@@ -309,7 +309,7 @@ padding-bottom: 10px;
 .start{
   width: 100%;
   margin: 0 auto;
-  padding-top: 15rem;
+  padding-top: 10rem;
 }
 
 .start h1{
@@ -743,7 +743,7 @@ font-family: Helvetica, sans-serif;
    margin-right: 20px;
    margin-left: 10px;
     max-width: 350px;
-    width: 200px;
+    /* width: 200px; */
     /* min-width: 300px; */
   }  
 
@@ -770,15 +770,21 @@ font-family: Helvetica, sans-serif;
   }
   .cart_item .quantityPrice{
     margin-left: -130px;
-    margin-top: -5px
+   
+    margin-top: -50px;
     
 
   }
 
+  .cart_center .btn-checkOut{
+    margin-left: 8rem;
+  }
+
   .cart_item .arrow{
     margin-left: -110px;
-    margin-top: 5rem;
+    
     padding-left: 2px;
+    margin-top: 2rem;
   }
 
   .cart_item .price{

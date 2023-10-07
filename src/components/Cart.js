@@ -148,9 +148,9 @@ export const Cart = (product) => {
                                     
                                    
                                     <div className='arrow'>  
-                                    <div className='uparrow'>
-                                    <box-icon name="up-arrow" type="solid" onClick={()=> sume(item.id)}></box-icon> 
-                                    </div>
+                                        <div className='uparrow'>
+                                        <box-icon name="up-arrow" type="solid" onClick={()=> sume(item.id)}></box-icon> 
+                                        </div>
                                         
                                     <div className='downArrow'>
                                     <box-icon  name="down-arrow" type="solid" onClick={()=> reste(item.id)} ></box-icon>
